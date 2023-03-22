@@ -164,3 +164,18 @@ p merge_sort(arr)
 # arr2 = [5]
 
 # p merge(arr1, arr2)
+
+def subsets(arr)
+    # results = []
+    
+    # return results << arr if arr.empty?
+    
+    # first = arr.shift
+    # results.each
+    
+    
+    # results << first
+
+    # subsets(  )
+    
+end
