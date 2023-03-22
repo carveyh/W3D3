@@ -24,10 +24,10 @@ def exp1(base, power)
     base * exp1(base, power - 1)
 end
 
-p exp1(3,0)
-p exp1(3,1)
-p exp1(3,2)
-p exp1(3,3)
+# p exp1(3,0)
+# p exp1(3,1)
+# p exp1(3,2)
+# p exp1(3,3)
 
 def exp2(base, power)
     return 1 if power == 0
@@ -39,10 +39,10 @@ def exp2(base, power)
     end
 end
 
-p exp2(3,0)
-p exp2(3,1)
-p exp2(3,2)
-p exp2(3,3)
+# p exp2(3,0)
+# p exp2(3,1)
+# p exp2(3,2)
+# p exp2(3,3)
 
 class Array
     def deep_dup
@@ -56,12 +56,45 @@ class Array
     end
 end
 
-orig_arr = [1,[2],[3,[4]]]
+# orig_arr = [1,[2],[3,[4]]]
 
-copy_arr = orig_arr.deep_dup
+# copy_arr = orig_arr.deep_dup
 
-copy_arr[1] << 5
+# copy_arr[1] << 5
 
-p copy_arr
+# p copy_arr
 
-p orig_arr
+# p orig_arr
+
+def rec_fib(n)
+    return [0] if n == 1
+    return [0,1] if n == 2
+
+    last_fibs = rec_fib(n-1)
+
+    last_fibs << last_fibs[-1] + last_fibs[-2]
+end
+
+# p rec_fib(1)
+# p rec_fib(2)
+# p rec_fib(3)
+# p rec_fib(6)
+# p rec_fib(10)
+
+def iter_fib(n)
+    seq = [0, 1]
+
+    while seq.length < n 
+        seq << seq[-1] + seq[-2]
+    end
+
+    seq[0...n]  
+
+end
+
+p iter_fib(1)
+p iter_fib(2)
+p iter_fib(3)
+p iter_fib(6)
+p iter_fib(10)
+
