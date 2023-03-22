@@ -1,3 +1,4 @@
+require 'byebug'
 
 #WARMUP
 def rec_range(start_num, end_num)
@@ -118,10 +119,38 @@ def bsearch(arr, target)
     end
 end
 
-p bsearch([1, 2, 3], 1) # => 0
-p bsearch([2, 3, 4, 5], 3) # => 1
-p bsearch([2, 4, 6, 8, 10], 6) # => 2
-p bsearch([1, 3, 4, 5, 9], 5) # => 3
-p bsearch([1, 2, 3, 4, 5, 6], 6) # => 5
-p bsearch([1, 2, 3, 4, 5, 6], 0) # => nil
-p bsearch([1, 2, 3, 4, 5, 7], 6) # => nil
+# p bsearch([1, 2, 3], 1) # => 0
+# p bsearch([2, 3, 4, 5], 3) # => 1
+# p bsearch([2, 4, 6, 8, 10], 6) # => 2
+# p bsearch([1, 3, 4, 5, 9], 5) # => 3
+# p bsearch([1, 2, 3, 4, 5, 6], 6) # => 5
+# p bsearch([1, 2, 3, 4, 5, 6], 0) # => nil
+# p bsearch([1, 2, 3, 4, 5, 7], 6) # => nil
+
+def merge_sort(arr)
+
+end
+
+def merge(arr1, arr2)
+    sorted = []
+
+    while !arr1.empty? || !arr2.empty?
+        if (arr1 + arr2).length == 1 || (arr1.empty? || arr2.empty?)
+            sorted += (arr1 + arr2)
+            break
+        end
+        # debugger
+        if arr1.first < arr2.first 
+            sorted << arr1.shift
+        else
+            sorted << arr2.shift
+        end
+    end
+
+    sorted
+end
+
+# arr1 = [5, 6, 9]
+# arr2 = [3, 6]
+
+# p merge(arr1, arr2)
